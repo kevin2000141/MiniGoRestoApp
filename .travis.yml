@@ -8,7 +8,7 @@ services:
 before_install: 
   - export CI_COMMIT=$(echo ${TRAVIS_COMMIT:0:8})
   - echo $CI_COMMIT
-  - docker build -t $DOCKER_HUB_USERNAME/minigoresto:$CI_COMMIT
+  - docker build -t $DOCKER_HUB_USERNAME/minigoresto:$CI_COMMIT .
   - docker images
   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
   - eval $(ssh-agent -s)
