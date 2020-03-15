@@ -19,7 +19,7 @@ before_install:
   - chmod 700 ~/.ssh
   - echo "${SSH_PRIVATE_KEY}" >> ~/.ssh/deploy_rsa
   - chmod 600 ~/.ssh/deploy_rsa
-  - eval \$(ssh-agent)
+  - eval "$(ssh-agent -s)"
   - ssh-add ~/.ssh/deploy_rsa
   - 'echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
 
